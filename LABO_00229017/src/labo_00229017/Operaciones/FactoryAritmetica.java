@@ -5,13 +5,32 @@
  */
 package labo_00229017.Operaciones;
 
-import labo_00229017.AbstractFactory;
+import labo_00229017.Factory.AbstractFactory;
+import labo_00229017.Conversiones.Conversor;
 
 /**
  *
  * @author LN710Q
  */
-public class FactoryAritmetica implements AbstractFactory{
+public class FactoryAritmetica implements AbstractFactory {
     @Override
-    public 
+    public Aritmetica getAritmetica(String type) {
+        switch (type) {
+            case "suma":
+                return new Suma();
+            case "resta":
+                return new Resta();
+            case "multiplicacion":
+                return new Multiplicacion();
+            case "division":
+                return new Division();
+        }
+        return null;
+    }
+
+    @Override
+    public Conversor getConversor(String type){
+
+        return null;
+}
 }
